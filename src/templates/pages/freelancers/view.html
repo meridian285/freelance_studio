@@ -1,0 +1,55 @@
+<div class="freelancers">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Просмотр фрилансера</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="/api/freelancers">Фрилансеры</a></li>
+                        <li class="breadcrumb-item active">Профиль фрилансера</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+    <section class="content">
+        <div class="container-fluid">
+
+
+            <div class="row">
+                <div class="col-md-3">
+
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <div class="text-center">
+                                <img class="profile-user-img img-fluid img-circle" id="avatar"
+                                     src=""
+                                     alt="User profile picture">
+                            </div>
+
+                            <h3 class="profile-username text-center" id="name"></h3>
+
+                            <p class="text-muted text-center">Фрилансер</p>
+
+                            <p class="text-muted text-center" id="level"></p>
+
+
+                        </div>
+                    </div>
+
+                    <a href="/api/freelancer/edit?id=" class="btn btn-warning w-100" id="edit-link">Редактировать</a>
+                    <a href="/api/freelancer/delete?id=" class="btn btn-danger w-100" id="delete-link">Удалить</a>
+
+                </div>
+                <div class="col-md-9">
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
