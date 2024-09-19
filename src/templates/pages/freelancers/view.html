@@ -43,11 +43,44 @@
                     </div>
 
                     <a href="/api/freelancer/edit?id=" class="btn btn-warning w-100" id="edit-link">Редактировать</a>
-                    <a href="/api/freelancer/delete?id=" class="btn btn-danger w-100" id="delete-link">Удалить</a>
+                    <a href="/api/freelancer/delete?id=" class="btn btn-danger mt-2 w-100" id="delete-link">Удалить</a>
 
                 </div>
                 <div class="col-md-9">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">О фрилансере</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <strong><i class="fas fa-envelope mr-1"></i> E-mail</strong>
+                            <p class="text-muted" id="email">
+                            </p>
+                            <hr>
 
+                            <strong><i class="fas fa-book mr-1"></i> Образование</strong>
+                            <p class="text-muted" id="education"></p>
+                            <hr>
+
+                            <strong><i class="fas fa-map-marked-alt mr-1"></i> Местонахождение</strong>
+                            <p class="text-muted" id="location"></p>
+                            <hr>
+
+                            <strong><i class="fas fa-pencil-alt mr-1"></i> Навыки</strong>
+                            <p class="text-muted" id="skills"></p>
+                            <hr>
+
+                            <strong><i class="fas fa-file-alt mr-1"></i> Информация</strong>
+                            <p class="text-muted" id="info"></p>
+                            <hr>
+
+                            <strong><i class="fas fa-clock mr-1"></i> Добавлен на страницу</strong>
+                            <p class="text-muted" id="created"></p>
+                            <hr>
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
                 </div>
             </div>
         </div>

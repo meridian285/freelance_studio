@@ -18,7 +18,7 @@ export class Router {
                 route: '/',
                 title: 'Дашборд',
                 filePathTemplate: '/templates/pages/dashboard.html',
-                useLayout: 'templates/layout.html',
+                useLayout: '/templates/layout.html',
                 load: () => {
                     new Dashboard();
                 }
@@ -71,7 +71,7 @@ export class Router {
                 route: '/freelancers',
                 title: 'Фрилансеры',
                 filePathTemplate: '/templates/pages/freelancers/list.html',
-                useLayout: 'templates/layout.html',
+                useLayout: '/templates/layout.html',
                 load: () => {
                     new FreelancersList(this.openNewRoute.bind(this));
                 },
@@ -82,14 +82,13 @@ export class Router {
                 route: '/freelancers/view',
                 title: 'Фрилансер',
                 filePathTemplate: '/templates/pages/freelancers/view.html',
-                useLayout: 'templates/layout.html',
+                useLayout: '/templates/layout.html',
                 load: () => {
-                    new FreelancersView();
+                    new FreelancersView(this.openNewRoute.bind(this));
                 }
             },
         ];
     }
-
 
 
 
