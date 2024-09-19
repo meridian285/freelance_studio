@@ -1,5 +1,6 @@
 import {HttpUtils} from "../../utils/http-utils";
 import config from "../../config/config";
+import {CommonUtils} from "../../utils/common-utils";
 
 export class FreelancersView {
 
@@ -11,6 +12,9 @@ export class FreelancersView {
         if (!id) {
             return this.openNewRoute('/');
         }
+
+        document.getElementById('edit-link').href = '/freelancer/edit?id=' + id;
+        document.getElementById('delete-link').href = '/freelancer/delete?id=' + id;
 
         this.getFreelancer(id).then();
     }
@@ -38,7 +42,16 @@ export class FreelancersView {
 
         document.getElementById('name').innerText = freelancer.name + ' ' + freelancer.lastName;
         document.getElementById('email').innerText = freelancer.email;
-        document.getElementById('email').innerText = freelancer.email;
+        document.getElementById('education').innerText = freelancer.education;
+        document.getElementById('location').innerText = freelancer.location;
+        document.getElementById('skills').innerText = freelancer.skills;
+        document.getElementById('info').innerText = freelancer.info;
 
+        if (freelancer.createdAt) {
+            const date = new Date(freelancer.createdAt);
+            document.getElementById('created').innerText = date.toLocaleString('ru-RU');
+        }
+
+        document.getElementById('level').innerHTML = CommonUtils.getLevelHtml(freelancer.level);
     }
 }
