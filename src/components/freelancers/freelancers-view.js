@@ -13,8 +13,8 @@ export class FreelancersView {
             return this.openNewRoute('/');
         }
 
-        document.getElementById('edit-link').href = '/freelancer/edit?id=' + id;
-        document.getElementById('delete-link').href = '/freelancer/delete?id=' + id;
+        document.getElementById('edit-link').href = '/freelancers/edit?id=' + id;
+        document.getElementById('delete-link').href = '/freelancers/delete?id=' + id;
 
         this.getFreelancer(id).then();
     }

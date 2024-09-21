@@ -70,10 +70,10 @@ export class FreelancersCreate {
 
             if (result.error || !result.response && (result.response && result.response.error)) {
                 console.log(result.response.message);
-                return alert('Возникла ошибка при запросе фрилансера');
+                return alert('Возникла ошибка при добавлении фрилансера.Обратитесь в поддержку');
             }
 
-            this.openNewRoute('/freelancers/view?id=' + result.response.id);
+            return this.openNewRoute('/freelancers/view?id=' + result.response.id);
 
         }
     }
