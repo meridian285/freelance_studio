@@ -1,0 +1,80 @@
+<div class="order-edit">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Создать новый заказ</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="/orders">заказы</a></li>
+                        <li class="breadcrumb-item active">Создание</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Создание нового заказа</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="amountInput" class="col-form-label">Сумма</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" id="amountInput" class="form-control" placeholder="Сумма">
+                            <span id="amountInput-error" class="error invalid-feedback">Заполните поле</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="descriptionInput" class="col-form-label">Описание</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <textarea id="descriptionInput" class="form-control" placeholder="Описание"></textarea>
+                            <span id="descriptionInput-error" class="error invalid-feedback">Заполните поле</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="statusSelect" class="col-form-label">Статус</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <select type="text" id="statusSelect" class="form-control">
+                                <option value="new" selected>Новый</option>
+                                <option value="confirmed">Подтвержден</option>
+                                <option value="success">Выполнен</option>
+                                <option value="canceled">Отменен</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <label for="freelancerSelect" class="col-form-label">Исполнитель</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <select type="text" id="freelancerSelect" class="form-control">
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="offset-sm-3 col-sm-9">
+                            <button type="button" class="btn btn-danger" id="saveButton">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+    </section>
+</div>
