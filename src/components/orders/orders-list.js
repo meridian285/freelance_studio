@@ -20,7 +20,6 @@ export class OrdersList {
             return alert('Возникла ошибка при запросе заказов. Обратитесь в поддержку');
         }
 
-        console.log(result.response.orders)
         this.showRecords(result.response.orders);
     }
 

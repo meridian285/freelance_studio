@@ -11,7 +11,6 @@ export class OrdersCreate {
         this.completeDate = null;
         this.deadlineDate = null;
 
-
         const calendarScheduled = $('#calendar-scheduled');
         // The Calender
         calendarScheduled.datetimepicker({
@@ -94,7 +93,6 @@ export class OrdersCreate {
 
     async saveOrder(e) {
         e.preventDefault();
-
 
         if (this.validateForm()) {
             const createData = {
