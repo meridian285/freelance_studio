@@ -1,5 +1,6 @@
 import {HttpUtils} from "../../utils/http-utils";
 import {FileUtils} from "../../utils/file-utils";
+import {ValidationUtils} from "../../utils/validation-utils";
 
 export class OrdersCreate {
     constructor(openNewRoute) {
@@ -64,6 +65,13 @@ export class OrdersCreate {
         this.completeCardElement = document.getElementById('complete-card');
         this.deadlineCardElement = document.getElementById('deadline-card');
 
+        this.validations = [
+            {element: this.descriptionInputElement},
+            {element: this.amountInputElement},
+            {element: this.scheduledCardElement, options: {checkProperty: this.scheduledDate}},
+            {element: this.deadlineCardElement, options: {checkProperty: this.deadlineDate}},
+        ];
+
         this.getFreelancers().then();
     }
 
@@ -94,7 +102,7 @@ export class OrdersCreate {
     async saveOrder(e) {
         e.preventDefault();
 
-        if (this.validateForm()) {
+        if (ValidationUtils.validateForm(this.validations)) {
             const createData = {
                 description: this.descriptionInputElement.value,
                 deadlineDate: this.deadlineDate.toISOString(),
@@ -120,35 +128,5 @@ export class OrdersCreate {
 
             return this.openNewRoute('/orders/view?id=' + result.response.id);
         }
-    }
-
-    validateForm() {
-        let isValid = true;
-
-        let textInputArray = [this.descriptionInputElement, this.amountInputElement];
-
-        for (let i = 0; i < textInputArray.length; i++) {
-            if (textInputArray[i].value) {
-                textInputArray[i].classList.remove('is-invalid');
-            } else {
-                textInputArray[i].classList.add('is-invalid');
-                isValid = false;
-            }
-        }
-
-        if (this.scheduledDate) {
-            this.scheduledCardElement.classList.remove('is-invalid');
-        } else {
-            this.scheduledCardElement.classList.add('is-invalid');
-            isValid = false;
-        }
-        if (this.deadlineDate) {
-            this.deadlineCardElement.classList.remove('is-invalid');
-        } else {
-            this.deadlineCardElement.classList.add('is-invalid');
-            isValid = false;
-        }
-
-        return isValid;
     }
 }
